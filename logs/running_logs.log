@@ -1,0 +1,413 @@
+[2026-05-09 19:59:07,532: INFO: config: PyTorch version 2.4.1 available.]
+[2026-05-09 20:00:41,072: INFO: server: Started server process [28055]]
+[2026-05-09 20:00:41,072: INFO: on: Waiting for application startup.]
+[2026-05-09 20:00:41,072: INFO: on: Application startup complete.]
+[2026-05-09 20:00:41,072: INFO: server: Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)]
+[2026-05-09 20:04:29,815: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-05-09 20:04:29,817: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-05-09 20:04:29,818: INFO: common: created directory at: artifacts]
+[2026-05-09 20:04:29,818: INFO: common: created directory at: artifacts/model_evaluation]
+[2026-05-09 20:04:29,819: ERROR: h11_impl: Exception in ASGI application
+]
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/utils/hub.py", line 403, in cached_file
+    resolved_file = hf_hub_download(
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/huggingface_hub/utils/_validators.py", line 106, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/huggingface_hub/utils/_validators.py", line 154, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': 'artifacts/model_trainer/tokenizer'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 404, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/exceptions.py", line 93, in __call__
+    raise exc
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "app.py", line 41, in predict_route
+    raise e
+  File "app.py", line 38, in predict_route
+    text = obj.predict(text)
+  File "/Users/ishitvsharma/Documents/Projects/Text-Summarization-NLP/src/textSummarizer/pipeline/prediction.py", line 13, in predict
+    tokenizer = AutoTokenizer.from_pretrained(self.config.tokenizer_path)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/models/auto/tokenization_auto.py", line 857, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/models/auto/tokenization_auto.py", line 689, in get_tokenizer_config
+    resolved_config_file = cached_file(
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/utils/hub.py", line 469, in cached_file
+    raise EnvironmentError(
+OSError: Incorrect path_or_model_id: 'artifacts/model_trainer/tokenizer'. Please provide either the path to a local folder or the repo_id of a model on the Hub.
+[2026-05-09 20:04:40,044: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-05-09 20:04:40,047: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-05-09 20:04:40,048: INFO: common: created directory at: artifacts]
+[2026-05-09 20:04:40,048: INFO: common: created directory at: artifacts/model_evaluation]
+[2026-05-09 20:04:40,049: ERROR: h11_impl: Exception in ASGI application
+]
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/utils/hub.py", line 403, in cached_file
+    resolved_file = hf_hub_download(
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/huggingface_hub/utils/_validators.py", line 106, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/huggingface_hub/utils/_validators.py", line 154, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': 'artifacts/model_trainer/tokenizer'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 404, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/exceptions.py", line 93, in __call__
+    raise exc
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "app.py", line 41, in predict_route
+    raise e
+  File "app.py", line 38, in predict_route
+    text = obj.predict(text)
+  File "/Users/ishitvsharma/Documents/Projects/Text-Summarization-NLP/src/textSummarizer/pipeline/prediction.py", line 13, in predict
+    tokenizer = AutoTokenizer.from_pretrained(self.config.tokenizer_path)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/models/auto/tokenization_auto.py", line 857, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/models/auto/tokenization_auto.py", line 689, in get_tokenizer_config
+    resolved_config_file = cached_file(
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/utils/hub.py", line 469, in cached_file
+    raise EnvironmentError(
+OSError: Incorrect path_or_model_id: 'artifacts/model_trainer/tokenizer'. Please provide either the path to a local folder or the repo_id of a model on the Hub.
+[2026-05-09 20:04:51,322: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-05-09 20:04:51,325: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-05-09 20:04:51,325: INFO: common: created directory at: artifacts]
+[2026-05-09 20:04:51,325: INFO: common: created directory at: artifacts/model_evaluation]
+[2026-05-09 20:04:51,326: ERROR: h11_impl: Exception in ASGI application
+]
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/utils/hub.py", line 403, in cached_file
+    resolved_file = hf_hub_download(
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/huggingface_hub/utils/_validators.py", line 106, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/huggingface_hub/utils/_validators.py", line 154, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': 'artifacts/model_trainer/tokenizer'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 404, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/exceptions.py", line 93, in __call__
+    raise exc
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "app.py", line 41, in predict_route
+    raise e
+  File "app.py", line 38, in predict_route
+    text = obj.predict(text)
+  File "/Users/ishitvsharma/Documents/Projects/Text-Summarization-NLP/src/textSummarizer/pipeline/prediction.py", line 13, in predict
+    tokenizer = AutoTokenizer.from_pretrained(self.config.tokenizer_path)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/models/auto/tokenization_auto.py", line 857, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/models/auto/tokenization_auto.py", line 689, in get_tokenizer_config
+    resolved_config_file = cached_file(
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/utils/hub.py", line 469, in cached_file
+    raise EnvironmentError(
+OSError: Incorrect path_or_model_id: 'artifacts/model_trainer/tokenizer'. Please provide either the path to a local folder or the repo_id of a model on the Hub.
+[2026-05-09 20:15:23,611: INFO: config: PyTorch version 2.4.1 available.]
+[2026-05-09 20:15:28,323: INFO: config: PyTorch version 2.4.1 available.]
+[2026-05-09 20:15:32,591: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-05-09 20:15:32,594: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-05-09 20:15:32,594: INFO: common: created directory at: artifacts]
+[2026-05-09 20:15:32,594: INFO: common: created directory at: artifacts/model_evaluation]
+[2026-05-09 20:15:32,595: ERROR: h11_impl: Exception in ASGI application
+]
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/utils/hub.py", line 403, in cached_file
+    resolved_file = hf_hub_download(
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/huggingface_hub/utils/_validators.py", line 106, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/huggingface_hub/utils/_validators.py", line 154, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': 'artifacts/model_trainer/tokenizer'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 404, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/exceptions.py", line 93, in __call__
+    raise exc
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "app.py", line 41, in predict_route
+    raise e
+  File "app.py", line 38, in predict_route
+    text = obj.predict(text)
+  File "/Users/ishitvsharma/Documents/Projects/Text-Summarization-NLP/src/textSummarizer/pipeline/prediction.py", line 13, in predict
+    tokenizer = AutoTokenizer.from_pretrained(self.config.tokenizer_path)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/models/auto/tokenization_auto.py", line 857, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/models/auto/tokenization_auto.py", line 689, in get_tokenizer_config
+    resolved_config_file = cached_file(
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/utils/hub.py", line 469, in cached_file
+    raise EnvironmentError(
+OSError: Incorrect path_or_model_id: 'artifacts/model_trainer/tokenizer'. Please provide either the path to a local folder or the repo_id of a model on the Hub.
+[2026-05-09 20:15:33,258: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-05-09 20:15:33,260: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-05-09 20:15:33,261: INFO: common: created directory at: artifacts]
+[2026-05-09 20:15:33,261: INFO: common: created directory at: artifacts/model_evaluation]
+[2026-05-09 20:15:33,262: ERROR: h11_impl: Exception in ASGI application
+]
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/utils/hub.py", line 403, in cached_file
+    resolved_file = hf_hub_download(
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/huggingface_hub/utils/_validators.py", line 106, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/huggingface_hub/utils/_validators.py", line 154, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': 'artifacts/model_trainer/tokenizer'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 404, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/exceptions.py", line 93, in __call__
+    raise exc
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "app.py", line 41, in predict_route
+    raise e
+  File "app.py", line 38, in predict_route
+    text = obj.predict(text)
+  File "/Users/ishitvsharma/Documents/Projects/Text-Summarization-NLP/src/textSummarizer/pipeline/prediction.py", line 13, in predict
+    tokenizer = AutoTokenizer.from_pretrained(self.config.tokenizer_path)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/models/auto/tokenization_auto.py", line 857, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/models/auto/tokenization_auto.py", line 689, in get_tokenizer_config
+    resolved_config_file = cached_file(
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/utils/hub.py", line 469, in cached_file
+    raise EnvironmentError(
+OSError: Incorrect path_or_model_id: 'artifacts/model_trainer/tokenizer'. Please provide either the path to a local folder or the repo_id of a model on the Hub.
+[2026-05-09 20:15:48,482: INFO: server: Shutting down]
+[2026-05-09 20:15:48,584: INFO: on: Waiting for application shutdown.]
+[2026-05-09 20:15:48,585: INFO: on: Application shutdown complete.]
+[2026-05-09 20:15:48,585: INFO: server: Finished server process [28055]]
+[2026-05-09 20:15:51,944: INFO: config: PyTorch version 2.4.1 available.]
+[2026-05-09 20:20:01,255: INFO: config: PyTorch version 2.4.1 available.]
+[2026-05-09 20:20:08,438: INFO: server: Started server process [28267]]
+[2026-05-09 20:20:08,438: INFO: on: Waiting for application startup.]
+[2026-05-09 20:20:08,439: INFO: on: Application startup complete.]
+[2026-05-09 20:20:08,439: INFO: server: Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)]
+[2026-05-09 20:20:23,290: INFO: config: PyTorch version 2.4.1 available.]
+[2026-05-09 20:20:42,212: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-05-09 20:20:42,215: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-05-09 20:20:42,215: INFO: common: created directory at: artifacts]
+[2026-05-09 20:20:42,216: INFO: common: created directory at: artifacts/model_evaluation]
+[2026-05-09 20:20:42,217: ERROR: h11_impl: Exception in ASGI application
+]
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/utils/hub.py", line 403, in cached_file
+    resolved_file = hf_hub_download(
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/huggingface_hub/utils/_validators.py", line 106, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/huggingface_hub/utils/_validators.py", line 154, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': 'artifacts/model_trainer/tokenizer'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 404, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/exceptions.py", line 93, in __call__
+    raise exc
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "app.py", line 41, in predict_route
+    raise e
+  File "app.py", line 38, in predict_route
+    text = obj.predict(text)
+  File "/Users/ishitvsharma/Documents/Projects/Text-Summarization-NLP/src/textSummarizer/pipeline/prediction.py", line 13, in predict
+    tokenizer = AutoTokenizer.from_pretrained(self.config.tokenizer_path)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/models/auto/tokenization_auto.py", line 857, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/models/auto/tokenization_auto.py", line 689, in get_tokenizer_config
+    resolved_config_file = cached_file(
+  File "/opt/miniconda3/envs/summary/lib/python3.8/site-packages/transformers/utils/hub.py", line 469, in cached_file
+    raise EnvironmentError(
+OSError: Incorrect path_or_model_id: 'artifacts/model_trainer/tokenizer'. Please provide either the path to a local folder or the repo_id of a model on the Hub.
+[2026-05-10 00:38:19,307: INFO: server: Shutting down]
+[2026-05-10 00:38:19,411: INFO: on: Waiting for application shutdown.]
+[2026-05-10 00:38:19,412: INFO: on: Application shutdown complete.]
+[2026-05-10 00:38:19,412: INFO: server: Finished server process [28267]]
+[2026-05-10 01:10:54,481: INFO: server: Started server process [29249]]
+[2026-05-10 01:10:54,481: INFO: on: Waiting for application startup.]
+[2026-05-10 01:10:54,481: INFO: on: Application startup complete.]
+[2026-05-10 01:10:54,482: INFO: server: Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)]
+[2026-05-10 01:11:23,018: INFO: config: PyTorch version 2.4.1 available.]
+[2026-05-10 01:13:01,267: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-05-10 01:13:01,270: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-05-10 01:13:01,271: INFO: common: created directory at: artifacts]
+[2026-05-10 01:13:01,271: INFO: common: created directory at: artifacts/model_evaluation]
+[2026-05-10 01:17:09,779: INFO: server: Shutting down]
+[2026-05-10 01:17:09,881: INFO: on: Waiting for application shutdown.]
+[2026-05-10 01:17:09,882: INFO: on: Application shutdown complete.]
+[2026-05-10 01:17:09,882: INFO: server: Finished server process [29249]]
+[2026-05-10 01:17:15,076: INFO: server: Started server process [29616]]
+[2026-05-10 01:17:15,076: INFO: on: Waiting for application startup.]
+[2026-05-10 01:17:15,076: INFO: on: Application startup complete.]
+[2026-05-10 01:17:15,076: INFO: server: Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)]
+[2026-05-10 01:17:38,377: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-05-10 01:17:38,381: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-05-10 01:17:38,382: INFO: common: created directory at: artifacts]
+[2026-05-10 01:17:38,382: INFO: common: created directory at: artifacts/model_evaluation]
+[2026-05-10 04:40:33,813: INFO: server: Shutting down]
+[2026-05-10 04:40:33,915: INFO: on: Waiting for application shutdown.]
+[2026-05-10 04:40:33,916: INFO: on: Application shutdown complete.]
+[2026-05-10 04:40:33,917: INFO: server: Finished server process [29616]]
