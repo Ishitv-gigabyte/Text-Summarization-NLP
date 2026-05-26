@@ -17,11 +17,13 @@ A production-grade NLP pipeline that uses **Google's Pegasus** model fine-tuned 
 # How to run locally?
 ### STEPS:
 
-Clone the repository
+Clone the repository:
 
 ```bash
-https://github.com/entbappy/End-to-end-Text-Summarization
+git clone https://github.com/Ishitv-gigabyte/Text-Summarization-NLP.git
+cd Text-Summarization-NLP
 ```
+
 ### STEP 01- Create a conda environment after opening the repository
 
 ```bash
@@ -33,26 +35,23 @@ conda activate summary
 ```
 
 
-### STEP 02- install the requirements
+### STEP 02- Install the requirements
 ```bash
 pip install -r requirements.txt
 ```
 
-
+### STEP 03- Run the locally hosted Gradio user interface
 ```bash
-# Finally run the following command
-python app.py
+python app_gradio.py
 ```
 
-Now,
-```bash
-open up you local host and port
+Now, open your web browser and navigate to:
+```text
+http://localhost:8080
 ```
 
+---
 
-```bash
-Author: Krish Naik
-Data Scientist
-Email: krishnaik06@gmail.com
+**Author:** Ishitv Sharma  
+**GitHub:** [Ishitv-gigabyte](https://github.com/Ishitv-gigabyte)
 
-```
