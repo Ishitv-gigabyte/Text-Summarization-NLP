@@ -68,7 +68,7 @@ theme = gr.themes.Soft(
     button_primary_text_color="white",
 )
 
-with gr.Blocks(theme=theme, css=custom_css, title="NLP Dialogue Summarizer") as demo:
+with gr.Blocks(title="NLP Dialogue Summarizer") as demo:
     # Header Section
     gr.HTML(
         """
@@ -152,4 +152,4 @@ with gr.Blocks(theme=theme, css=custom_css, title="NLP Dialogue Summarizer") as 
     )
 
 if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0", server_port=8080)
+    demo.launch(server_name="0.0.0.0", server_port=8080, theme=theme, css=custom_css)
