@@ -2,7 +2,9 @@ import os
 from box.exceptions import BoxValueError
 import yaml
 from textSummarizer.logging import logger
-from ensure import ensure_annotations
+# Custom decorator mock for ensure_annotations as the 'ensure' library is broken on Python 3.12+
+def ensure_annotations(func):
+    return func
 from box import ConfigBox
 from pathlib import Path
 from typing import Any
